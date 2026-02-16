@@ -1,0 +1,273 @@
+@font-face { 
+    font-family: 'Raleway'; 
+    src: url('/fonts/Raleway-VariableFont_wght.ttf') format('truetype'); 
+    font-weight: 400 700; 
+    font-style: normal; 
+}
+
+/* Layout Container */
+.container {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    padding: 0 18px 32px;
+
+    overflow-x: hidden;
+}
+
+/* Introduction Section */
+.introduction {
+    min-height: 450px;
+    width: 80vw;
+
+    display: flex;
+    justify-content: center;
+    gap: 40px;       
+
+    padding: 0 50px;
+}
+
+/* Intro Text */
+.introText {
+    max-width: 600px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 2;                
+
+    gap: 12px;
+}
+
+.introText h1 {
+    color: #D1D5DB;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    line-height: 1.2;
+    font-size: clamp(2rem, 5vw, 3.5rem); 
+    font-weight: 700;
+    text-align: start;
+
+    white-space: nowrap;
+}
+
+.introText p {
+    color: #D1D5DB;
+    font-size: 1rem;
+    margin: 0;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+/* Intro Image */
+.introImg {
+    flex: 1;                         
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image Box */
+.img {
+    width: 100%;
+    max-width: 400px;                
+    min-width: 280px;                
+    aspect-ratio: 3 / 4;            
+    border-radius: 20px;
+
+    background: url('/asset/image/Home pic.png') no-repeat center;
+    background-size: cover;
+}
+
+/* Social */
+.socialHolder {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 50px;
+
+    gap: 40px;   
+}
+
+
+.socialButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    height: 50px;
+    width: 200px;
+
+    border-radius: 10px;
+    background-color: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    color: #F9FAFB;
+
+    white-space: nowrap;
+    text-decoration: none;
+
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.socialButton span {
+    white-space: wrap;
+    font-size: 1rem;
+}
+
+.buttonIcon {
+    font-size: 1rem;
+}
+
+.socialButton:hover {
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    color: #d3d3d3;
+}
+
+.socialHolder a {
+    text-decoration: none; 
+}
+
+/* Responsive */
+/* Tablet and below */
+@media (max-width: 1024px) {
+    .introduction {
+        width: 90vw;              
+        gap: 20px;               
+        padding: 0 20px;
+    }
+
+    .introText h1 {
+        font-size: clamp(1.8rem, 4vw, 3rem); 
+        white-space: normal;                
+    }
+
+    .img {
+        max-width: 320px;        
+    }
+}
+
+@media (max-width: 960px) {
+    .socialButton {
+        width: 180px;
+    }
+}
+
+@media (max-width: 900px) {
+    .socialButton {
+        width: 160px;
+    }
+}
+
+@media (max-width: 845px) {
+    .container {
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 845px) {
+    .container {
+        margin-bottom: 80px;
+        padding: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .socialButton {
+        width: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    .introduction {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+        
+    }
+    .introText {
+        max-width: 100%;
+        align-items: center;
+    }
+    .introText h1 {
+        text-align: center;
+        white-space: normal; 
+    }
+    .introText p {
+        text-align: center;
+        font-size: 0.95rem;
+    }
+    .introImg {
+        margin-top: 20px;
+        justify-content: center;
+    }
+    .img {
+        max-width: 250px;
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .socialHolder {
+        width: 100%;
+        display: grid;                 
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;                      
+        justify-items: center;         
+    }
+
+    .socialButton {
+        width: 100%;        
+        width: 250px;   
+    }
+}
+
+@media (max-width: 580px) {
+    .socialHolder {
+        width: 100%;
+        display: flex;                 
+        flex-direction: column;
+
+        gap: 20px;                      
+        justify-items: center;        
+    }
+}
+
+@media (max-width: 768px) {
+    .introImg {
+        order: -1;
+    }
+
+    .introText {
+        order: 0;
+    }
+}
+
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .introText h1 {
+        font-size: 1.8rem;       
+    }
+
+    .introText p {
+        font-size: 0.9rem;
+    }
+
+    .img {
+        max-width: 200px;
+    }
+}
+
+

@@ -1,0 +1,373 @@
+.appHeader {
+    width: 100%;
+    padding: 18px 18px 32px 18px;  
+    box-sizing: border-box;     
+}
+
+.headerContainer {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 70px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* Logo */
+.logo {
+    background: transparent url('../public/asset/image/logo.JPG') 0% 0% no-repeat padding-box;
+    width: 211px;
+    height: 48px;
+
+    background-size: contain;
+
+    margin-left: 20px;
+}
+
+/* Nav */
+.navLinks {
+    width: 663px;
+    height: 63px;
+
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+
+.navLinks ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.navLinks ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.navLinks ul li:last-child {
+    margin-right: 0;
+}
+
+.navLinks a {
+    text-decoration: none;
+}
+
+.icon {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.navTitle {
+    font-family: 'Manrope', sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 19px;
+    letter-spacing: 0px;
+    color: #EDE9FE;
+}
+
+.navTitleHolder {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #000;
+    border-radius: 41px;
+    transition: background 0.3s ease;
+}
+
+.active {
+    background: linear-gradient(90deg, #8B5CF6, #C084FC);
+    border-radius: 41px;
+}
+/* Profile Section */
+.profileHolder {
+    width: auto;
+    height: 44px;
+
+    display: flex;
+
+    margin-right: 20px;
+}
+
+.profileDetails {
+    width: auto;
+    height: 44px;
+    
+    display: flex;
+    justify-content: center;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+.name{
+    font-family: 'Manrope', sans-serif;
+    font-weight: bold;        
+    font-size: 16px;          
+    line-height: 19px;        
+    letter-spacing: 0px;      
+    color: #EDE9FE;           
+    text-align: left;
+
+    white-space: normal;
+}
+
+.role {
+    font-family: 'Manrope', sans-serif;
+    font-weight: normal;     
+    font-size: 16px;         
+    line-height: 19px;       
+    letter-spacing: 0px;    
+    color: #EDE9FE;         
+    text-align: left;
+
+    white-space: normal;
+}
+
+.line {
+    background-color: #EDEDED;  
+    opacity: 1;
+    width: 1px;
+    height: 44px;
+
+    margin: 0 12px;
+}
+
+.messageIcon {
+    font-size: 20px;
+    color: #ffffff;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px 0 12px 0;
+}
+
+/* Hover */
+.navTitleHolder:hover {
+    background: linear-gradient(90deg, #8B5CF6, #C084FC);
+    border-radius: 41px;
+}
+
+.navTitleHolder:hover .icon,
+.navTitleHolder:hover .navTitle {
+    color: #ffffff;
+}
+
+.messageIcon:hover { 
+    color: #8B5CF6; 
+    transform: scale(1.1);
+}
+
+
+/* Responsive */
+@media (max-width: 1180px) {
+    .logo {
+        width: 180px;
+        height: 48px;
+    }
+}
+
+@media (max-width: 1153px) {
+    .logo {
+        width: 130px;
+    }
+}
+
+@media (max-width: 1105px) {
+    .navLinks {
+        width: 600px;
+    }
+}
+
+@media (max-width: 1040px) {
+    .navLinks {
+        width: 500px;
+    }
+    .navTitle {
+        display: none;
+    }
+}
+
+@media (max-width: 950px) {
+    .navLinks {
+        width: 400px;
+    }
+}
+
+@media (max-width: 845px) {
+    .headerContainer {
+        position: fixed; 
+        bottom: 20px; 
+        left: 50%; 
+
+        width: 80%;    
+        height: 50px;      
+
+        display: flex;
+        flex-direction: row;       
+        justify-content: center;   
+        align-items: center;
+        align-content: center;
+        gap: 0;
+
+        padding: 10px ;
+
+        margin: 520px auto 0 auto;
+    
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
+        border-radius: 30px;
+
+        transform: translateX(-50%); 
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .navLinks {
+        width: auto;
+        height: auto;
+    }
+
+    .navLinks ul {
+        display: flex;
+        flex-direction: row;     
+        gap: 20px;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .profileHolder {
+        margin-left: 20px;
+        margin-right: 0;
+
+        display: flex;
+        justify-content: center;
+
+        height: 100%;
+        align-items: center;
+    }
+
+    .name, .role, .line{
+        display: none;
+    }
+
+    .messageIcon {
+        font-size: 24px;  
+        margin: 8px 12px 10px 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .headerContainer {
+        margin-top: 540px;
+    }
+}
+
+@media (max-width: 768px) {
+    .headerContainer {
+        margin-top: 520px;
+    }
+}
+
+@media (max-width: 500px) {
+    .headerContainer {
+        margin-top: 550px;
+    }
+}
+
+@media (max-width: 430px) {
+    .headerContainer {
+        margin-top: 570px;
+    }
+}
+
+@media (max-width: 388px){
+    .profileHolder {
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 380px){
+    .profileHolder {
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 370px) {
+    .headerContainer {
+        margin-top: 590px;
+    }
+}
+
+@media (max-width: 400px) {
+    .headerContainer {
+        width: 340px;
+    }
+}
+
+@media (max-width: 350px) {
+    .headerContainer {
+        width: 315px;
+    }
+    .icon {
+        font-size: 20px;
+    }
+    .messageIcon {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 330px) {
+    .headerContainer {
+        width: 300px;
+    }
+}
+
+@media (max-width: 310px) {
+    .headerContainer {
+        width: 280px;
+    }
+    .navLinks {
+        width: 600px;
+        height: auto;
+    }
+    .navLinks ul {
+        gap: 0
+    }
+    .profileHolder {
+        margin-left: 0;
+    }
+
+
+}
+

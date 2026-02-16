@@ -1,0 +1,436 @@
+/* Layout Container */
+.container {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 18px 32px;
+}
+
+/* Introduction Section */
+.introduction {
+  min-height: 450px;
+  width: 100%;
+  max-width: 1200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;       
+}
+
+.introContainer {
+  display: flex;
+  gap: 40px;
+  position: relative;
+} 
+
+.divider { 
+  width: 1px; 
+  background-color: rgba(255,255,255,0.2); 
+}
+
+/* Intro Image */
+.introImg {
+  flex: 1.5;        
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  width: 100%;
+  max-width: 400px;                
+  border-radius: 20px;
+
+  height: 500px;
+
+  background: url('/asset/image/cha2.jpeg') no-repeat center;
+  background-size: cover;
+}
+
+/* Intro Text */
+.introText {
+  flex: 2;
+  padding: 20px;
+  background-color: rgba(255,255,255,0.05); 
+  border-radius: 8px;
+}
+
+
+.introText h3 {
+  text-align: start;
+  color: #7B68EE; 
+  margin: 0 0 15px 0;
+  font-size: 2rem;
+}
+
+.introText h1 {
+  color: #D1D5DB;
+  margin: 0;
+  line-height: 1.2;
+  font-size: clamp(2rem, 5vw, 3.5rem); 
+  font-weight: 700;
+  white-space: normal; 
+}
+
+.introText h1 span {
+  background: linear-gradient(90deg, #8B5CF6, #C084FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.introText p {
+  color: #D1D5DB;
+  font-size: 1rem;
+  margin: 0;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+/* More Details */
+.moredetails { 
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  margin: 90px 0 20px;
+  padding: 20px;
+}
+
+.moredetails h2,
+.moredetails p {
+  color: #fff;
+  max-width: 800px;
+}
+
+/* History Layout */
+.history {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+
+  margin: 20px;
+  gap: 20px;
+}
+
+/* Card Holder */
+.cardholder {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 15px;
+}
+
+.cardholder h1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.icon { 
+  color: #fff;
+}
+
+/* Experience Card */
+.experiencecard {   
+  display: flex; 
+  width: 90%;
+  gap: 10px; 
+
+  align-items: center;
+  border-radius: 8px; 
+
+  border: 2px solid #7B68EE; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+  background: rgba(255,255,255,0.05); 
+  padding: 20px; 
+}
+
+.cardlogo {
+  display: flex;
+  justify-content: center;
+}
+
+.cardlogoimg {
+  position: relative;   
+  width: 80px;          
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.cardcontent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cardcontent h3 { 
+  margin: 0; 
+  font-size: 1.2rem; 
+  color: #fff;
+  white-space: normal; 
+}
+
+.data {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 0.95rem;
+  width: 100%;
+
+  align-items: baseline;
+}
+
+.experienceRole {
+  font-weight: 600;
+  color: #F9FAFB; 
+}
+
+.experienceDate {
+  color: rgba(255, 255, 255, 0.6); 
+  font-size: 0.9rem;
+  font-style: italic;              
+}
+
+.data h4 {
+  margin: 5px 0;
+  font-weight: normal; 
+  text-align: start;
+  white-space: normal; 
+}
+
+.viewbtn {
+  display:flex; 
+  justify-content:flex-end;
+  flex: 0.1;
+  height: 100%;
+}
+
+.viewbtnIcon {
+  margin-right: 8px; 
+  cursor: pointer; 
+  color: white;
+}
+
+/* Hover */
+.experiencecard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 1120px) {
+  .data {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1099px) {
+  .cardcontent h3 {
+    text-align: start;
+  }
+}
+
+@media (max-width: 955px) {
+  .history {
+    flex-direction: column;
+  }
+
+  .data {
+    flex-direction: row;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .introduction {
+    width: 90vw;
+    gap: 20px;
+  }
+  .img {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 845px) {
+  .container {
+    margin-top: 10px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .introContainer {
+    flex-direction: column;
+  }
+  .divider { 
+    display: none; 
+  }
+  .introImg {
+    flex: unset;
+    width: 100%;
+  }
+  .img {
+    max-width: 100%;
+    height: 300px;
+  }
+  .introText {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 12px;
+  }
+  .introText h3 {
+    text-align: center;
+    color: #7B68EE; 
+    margin: 0 0 15px 0;
+    font-size: 2rem;
+  }
+  .introText h1 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+  .introText p {
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+  }
+  .moredetails p {
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  .cardholder h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .data {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 529px) {
+  .moredetails {
+    padding: 0;
+  }
+  .moredetails h2{
+    margin-bottom: 0;
+  }
+  .moredetails p {
+    width: 90%;
+  }
+}
+
+@media (max-width: 500px) {
+  .viewbtn {
+    display: none;
+  }
+  .experiencecard {
+    cursor: pointer;
+  }
+  .experiencecard {
+    gap: 10px;
+  }
+  .data {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 495px) {
+  .experiencecard {
+    padding: 10px;
+  }
+  .cardlogoimg {
+    width: 70px;
+    height: 70px;
+  }
+  .cardcontent h3 {
+    font-size: 1rem; 
+  }
+  .data h4 {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 485px) {
+  .cardholder {
+    width: 100%;
+  }
+  .cardcontent h3 {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 545px) {
+  .moredetails { 
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 502px) {
+  .moredetails { 
+    margin-bottom: 80px;
+  }
+}
+
+
+@media (max-width: 430px) {
+  .data {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 400px) {
+  .cardlogoimg {
+    width: 60px;
+    height: 60px;
+  }
+  
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .introText h1 {
+    font-size: 1.6rem;       
+  }
+  .introText p {
+    font-size: 0.9rem;
+  }
+  .img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 384px) {
+  .cardholder h1 {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,126 @@
+@keyframes fadeIn { 
+    from { opacity: 0; transform: scale(0.95); } 
+    to { opacity: 1; transform: scale(1); } 
+}
+
+.modalOverlay {
+    background: rgba(0,0,0,0.5);
+
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContent {
+    width: 600px;
+    max-height: 80vh;
+    background: #fff;
+
+    position: relative;
+
+    border-radius: 8px;
+    padding: 1.5rem;
+
+    overflow-y: auto;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-out;
+    background: linear-gradient(to bottom right, #ffffff, #f2f6ff);
+}
+
+.modalDetails {
+    width: 100%;
+
+    display: flex;
+    gap: 20px;
+    justify-content:center;
+    align-items: center;
+}
+
+.modalDetails img {
+    width: 80px;
+
+    border-radius: 60px;
+    border: 2px solid gray;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2); 
+}
+
+.compDetails{
+    display: flex;
+    flex-direction: column;
+
+    border-bottom: 1px solid #ddd; 
+}
+
+.compDetails h4{ 
+    font-family: var(--font-raleway);
+    margin: 0;
+    color: black;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+.compDetails h3{ 
+    font-family: var(--font-raleway);
+    margin: 0;
+    font-weight:normal;
+    color: black;
+
+    white-space: nowrap;
+}
+
+.closeBtn {
+    position: absolute;
+    font-size: 50px;
+
+    top: 15px;
+    right: 30px;
+    
+    background: none;
+    border: none;
+    cursor: pointer;
+    
+}
+
+.modalTask{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 10px 0;
+}
+
+.modalTask ul {
+    list-style-position: inside; 
+    padding-left: 0;              
+    margin: 0;
+}
+
+.modalTask li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    text-align: start;
+    font-size: 20px;
+}
+
+@media (max-width: 600px) {
+  .modalContent {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .modalDetails {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modalDetails img {
+    max-width: 80px;
+    margin-bottom: 1rem;
+  }
+}
