@@ -20,7 +20,9 @@ function Header() {
   return (
     <header className={styles.appHeader}>
       <div className={styles.headerContainer}>
-        <div className={styles.logo}></div>
+        <div className={styles.logo}>
+          <div className={styles.logoImg}></div>
+        </div>
 
         {/* Navigation */}
         <nav className={styles.navLinks}>
