@@ -38,6 +38,7 @@ const Skills = () => {
 
   return (
     <section id="skills" className={styles.skillsSection}>
+      
       {/* Frontend */}
       <div className={styles.column}>
         <h2 className={styles.sectionTitle}>Frontend</h2>

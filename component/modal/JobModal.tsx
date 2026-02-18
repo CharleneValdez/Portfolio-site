@@ -1,8 +1,9 @@
 "use client";
-import { ModalItem} from "@/app/types/data";
+
 import styles from "../../style/JobModal.module.css";
+import { ModalItem} from "@/app/types/data";
+
 import { IoCloseCircleSharp } from "react-icons/io5";
-// import { Education, Experience } from "@/app/types/data";
 
 interface JobModalProps {
   isOpen: boolean;
@@ -13,13 +14,17 @@ interface JobModalProps {
 export default function JobModal({ isOpen, onClose, item }: JobModalProps) {
   if (!isOpen || !item) return null;
 
+  const isExperience = "company" in item;
+
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
+        
+        {/* Header */}
         <div className={styles.modalDetails}>
-          <img src={item.logo} alt="Logo" />
+          <img src={item.logo} alt={isExperience ? item.company : item.school}/>
           <div className={styles.compDetails}>
-            {"company" in item ? (
+            {isExperience ? (
               <>
                 <h4>{item.role}</h4>
                 <h3>{item.exactDate || item.dates}</h3>
@@ -36,7 +41,8 @@ export default function JobModal({ isOpen, onClose, item }: JobModalProps) {
           </button>
         </div>
         
-        {"responsibilities" in item && item.responsibilities && (
+        {/* Responsibilities */}
+        {isExperience && item.responsibilities && (
           <div className={styles.modalTask}>
               <ul>
                 {item.responsibilities.map((task, i) => (
@@ -45,7 +51,8 @@ export default function JobModal({ isOpen, onClose, item }: JobModalProps) {
               </ul>
           </div>
         )}
-
+        
+        {/* Achievements*/}
         {"achievements" in item && item.achievements && (
           <div className={styles.modalTask}>
               <ul>
@@ -55,7 +62,6 @@ export default function JobModal({ isOpen, onClose, item }: JobModalProps) {
               </ul>
           </div>
         )}
-
       </div>
     </div>
   );

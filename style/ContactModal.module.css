@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.4); /* lighter overlay */
+  background: rgba(0,0,0,0.4); 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,19 +12,19 @@
 }
 
 .modalContent {
-  background: #f9f9f9; /* light background */
+  background: #f9f9f9; 
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
-  color: #333; /* darker text for contrast */
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2); /* softer shadow */
+  color: #333; 
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2); 
   max-width: 400px;
   width: 90%;
   animation: fadeIn 0.3s ease-in-out;
 }
 
 .modalContent h3 {
-  color: #6a0dad; /* purple accent */
+  color: #6a0dad; 
   margin-bottom: 1rem;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .closeButton:hover {
-  background: #520b9e; /* darker purple on hover */
+  background: #520b9e; 
 }
 
 @keyframes fadeIn {

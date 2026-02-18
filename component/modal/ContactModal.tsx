@@ -3,21 +3,34 @@
 import React from "react";
 import styles from "../../style/ContactModal.module.css";
 
-// Define the props type
+import { FaWhatsapp } from "react-icons/fa";
+import { FaViber } from "react-icons/fa";
+
 interface ContactModalProps {
   show: boolean;
   onClose: () => void;
 }
 
 const ContactModal: React.FC<ContactModalProps> = ({ show, onClose }) => {
-  if (!show) return null; // don’t render if not active
+  if (!show) return null; 
 
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
         <h3>Contact Me</h3>
-        <p>📞 +63 912 345 6789</p>
-        <p>✉️ charlene@example.com</p>
+
+        <div className={styles.contactIcons}>
+          <a href="https://wa.me/639178760219" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <FaWhatsapp color="#25D366" size={32} />
+            <span>+63 917 876 0219(WhatsApp)</span>
+          </a>
+
+          <div className={styles.contactIcons}>
+            <FaViber color="#665CAC" size={32} />
+            <span>+63 917 876 0219(Viber)</span>
+          </div>
+        </div>
+
         <button onClick={onClose} className={styles.closeButton}>
           Close
         </button>

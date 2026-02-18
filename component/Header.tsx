@@ -1,14 +1,16 @@
 "use client";
 
-import styles from '../style/Header.module.css';
-import Link from "next/link";
+import { useState } from "react";
 import { usePathname } from "next/navigation";   
+import Link from "next/link";
+import styles from '../style/Header.module.css';
+
 import { GoHome } from "react-icons/go";
 import { LuMessageSquare } from "react-icons/lu";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import { FaCode } from "react-icons/fa6";
 import { FaFolderOpen } from "react-icons/fa";
-import { useState } from "react";
+
 import ContactModal from './modal/ContactModal';
 
 function Header() {
@@ -19,6 +21,8 @@ function Header() {
     <header className={styles.appHeader}>
       <div className={styles.headerContainer}>
         <div className={styles.logo}></div>
+
+        {/* Navigation */}
         <nav className={styles.navLinks}>
           <ul>
               <li>
@@ -51,7 +55,7 @@ function Header() {
                   </Link>
               </li>
 
-              <li>
+              {/* <li>
                   <Link 
                     href="/projects" 
                     className={`${styles.navTitleHolder} ${pathname === "/projects" ? styles.active : ""}`}
@@ -59,10 +63,11 @@ function Header() {
                     <FaFolderOpen className={styles.icon}/>
                     <span className={styles.navTitle}>Projects</span>
                   </Link>
-              </li>
+              </li> */}
           </ul>
         </nav>
         
+        {/* Profile + Contact */}
         <div className={styles.profileHolder}>
             <div className={styles.profileDetails}>
                 <div className={styles.profile}>
@@ -73,11 +78,13 @@ function Header() {
             <div className={styles.line}></div>
             <LuMessageSquare 
               className={styles.messageIcon}
+              aria-label="Open contact modal"
               onClick={() => setShowModal(true)} 
             />
         </div>
       </div>
 
+      {/* Contact Modal */}
       <ContactModal show={showModal} onClose={() => setShowModal(false)} />
     </header>
   );

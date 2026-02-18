@@ -54,6 +54,7 @@ export default function About() {
 
   return (
     <div className={styles.container}>
+      {/* Intro Section */}
       <div className={styles.introduction}>
         <div className={styles.introContainer}>
           <div className={styles.introImg}>
@@ -92,7 +93,8 @@ export default function About() {
           </div>
         </div>
       </div>
-
+      
+      {/* More Details Section */}
       <div className={styles.moredetails} id="more-details">
         <h2>More Details About Me</h2>
         <p>
@@ -102,6 +104,7 @@ export default function About() {
         </p>
 
         <div className={styles.history}>
+          {/* Education */}
           <div className={styles.cardholder}>
             <h1> 
               <IoSchoolOutline className={styles.icon}/>
@@ -145,7 +148,8 @@ export default function About() {
             </section>   
             ))}                   
           </div>
-
+          
+          {/* Work Experience */}
           <div className={styles.cardholder}>
             <h1> 
               <MdWorkOutline className={styles.icon}/>
@@ -189,6 +193,7 @@ export default function About() {
             </section>   
             ))}         
 
+            {/* Modal */}
             <JobModal isOpen={!!selectedItem} onClose={closeModal} item={selectedItem} />
           </div>
         </div>
