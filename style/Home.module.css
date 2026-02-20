@@ -41,7 +41,7 @@
     gap: 12px;
 }
 
-.introText h1 {
+.heroText {
     color: #D1D5DB;
     font-family: 'Raleway', sans-serif;
     margin: 0;
@@ -147,7 +147,7 @@
         padding: 0 20px;
     }
 
-    .introText h1 {
+    .heroText {
         font-size: clamp(1.8rem, 4vw, 3rem); 
         white-space: normal;                
     }
@@ -200,7 +200,7 @@
         max-width: 100%;
         align-items: center;
     }
-    .introText h1 {
+    .heroText {
         text-align: center;
         white-space: normal; 
     }
@@ -257,7 +257,7 @@
 
 /* Small mobile */
 @media (max-width: 480px) {
-    .introText h1 {
+    .heroText {
         font-size: 1.8rem;       
     }
 

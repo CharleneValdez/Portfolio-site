@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "../style/Home.module.css"
+import Head from "next/head";
 
 import { HiDownload } from "react-icons/hi";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -18,76 +19,83 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.container}>
-      {/* Intro Section */}
-      <div className={styles.introduction}>
-        <div className={styles.introText}>
-          
-          <h1>Hello, I'm Charlene</h1>
-          <h1>Ui/Ux Designer</h1>
-          <h1>Based in Philippines</h1>
+    <>
+      <Head>
+        <title>Charlene Mae Espanol | Front-End Developer & UI/UX Designer</title>
+        <meta name="description" content="Charlene Mae Espanol, Front-End Developer & UI/UX Designer based in the Philippines. Skilled in React, Next.js, Bootstrap, and accessibility." />
+        <meta name="keywords" content="Front-End Developer, UI/UX Designer, React, Next.js, Bootstrap, Philippines, Portfolio" />
+      </Head>
+      <div className={styles.container}>
+        {/* Intro Section */}
+        <div className={styles.introduction}>
+          <div className={styles.introText}>
+        
+            <h1 className={styles.heroText}>Hello, I'm Charlene</h1>
+            <h2 className={styles.heroText}>UI/UX Designer</h2>
+            <h2 className={styles.heroText}>Based in Philippines</h2>
 
-          <p>
-            Detail-oriented Front-End Developer with experience in building responsive web interfaces, 
-            UI/UX design, and IT operations. Skilled in optimizing user experience, streamlining
-            workflows, and collaborating across teams to deliver high-quality solutions.
-          </p>
 
-          <div className={"ctaContainer"}>
-            <button
-              className={"cta"}
-              onClick={handleDownload} 
-            >
-              <HiDownload className={"ctaIcon"}/> 
-              <span className={"ctaText"}>Download CV</span>
-            </button>
+            <p>
+              Detail-oriented Front-End Developer and UI/UX Designer based in the Philippines, 
+              skilled in React, Next.js, Bootstrap, and accessibility. 
+              Experienced in building responsive web interfaces, optimizing user experience, and streamlining workflows.
+            </p>
+
+            <div className={"ctaContainer"}>
+              <button
+                className={"cta"}
+                onClick={handleDownload} 
+              >
+                <HiDownload className={"ctaIcon"}/> 
+                <span className={"ctaText"}>Download CV</span>
+              </button>
+            </div>
+            
           </div>
-          
+
+          <div className={styles.introImg}>
+            <div className={styles.img}></div>
+          </div>
         </div>
 
-        <div className={styles.introImg}>
-          <div className={styles.img}></div>
+        {/* Social Links */}
+        <div className={styles.socialHolder}>
+          <a 
+            href="https://linkedin.com/in/CharleneEspanol" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={styles.socialButton}
+          > 
+            <FaLinkedinIn className={styles.buttonIcon}/>
+            <span>LinkedIn</span>
+          </a>
+
+          <a
+            href="https://github.com/Kekingkyawz19/Portfolio-site"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.socialButton}
+          >
+            <FaGithub className={styles.buttonIcon}/>
+            <span>GitHub</span>
+          </a>
+
+          {/* <button className={styles.socialButton}> 
+            <FaFolderOpen className={styles.buttonIcon}/>
+            <span>Portfolio Live Site</span>
+          </button> */}
+
+          <a 
+            href="mailto:charleve.valdez19@gmail.com"
+            className={styles.socialButton}
+          >
+              <GoPaperAirplane className={styles.buttonIcon}/>
+              <span>Email Me</span>
+          </a>
+
         </div>
-      </div>
-
-      {/* Social Links */}
-      <div className={styles.socialHolder}>
-        <a 
-          href="https://linkedin.com/in/CharleneEspanol" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className={styles.socialButton}
-        > 
-          <FaLinkedinIn className={styles.buttonIcon}/>
-          <span>LinkedIn</span>
-        </a>
-
-        <a
-          href="https://github.com/Kekingkyawz19/Portfolio-site"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.socialButton}
-        >
-          <FaGithub className={styles.buttonIcon}/>
-          <span>GitHub</span>
-        </a>
-
-        <button className={styles.socialButton}> 
-          <FaFolderOpen className={styles.buttonIcon}/>
-          <span>Portfolio Live Site</span>
-        </button>
-
-        <a 
-          href="mailto:charleve.valdez19@gmail.com"
-          className={styles.socialButton}
-        >
-            <GoPaperAirplane className={styles.buttonIcon}/>
-            <span>Email Me</span>
-        </a>
 
       </div>
-
-    </div>
-
+    </>
   )
 }

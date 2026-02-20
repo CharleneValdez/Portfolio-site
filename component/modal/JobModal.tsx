@@ -1,8 +1,9 @@
 "use client";
 
 import styles from "../../style/JobModal.module.css";
-import { ModalItem} from "@/app/types/data";
+import Image from "next/image";
 
+import { ModalItem} from "@/app/types/data";
 import { IoCloseCircleSharp } from "react-icons/io5";
 
 interface JobModalProps {
@@ -17,49 +18,54 @@ export default function JobModal({ isOpen, onClose, item }: JobModalProps) {
   const isExperience = "company" in item;
 
   return (
-    <div className={styles.modalOverlay}>
+    <div className={styles.modalOverlay} role="dialog" aria-modal="true"> 
       <div className={styles.modalContent}>
         
         {/* Header */}
         <div className={styles.modalDetails}>
-          <img src={item.logo} alt={isExperience ? item.company : item.school}/>
+          <Image 
+            src={item.logo} 
+            alt={isExperience ? `${item.company} company logo` : `${item.school} university logo`}
+            width={80} 
+            height={80} 
+          />
           <div className={styles.compDetails}>
             {isExperience ? (
               <>
-                <h4>{item.role}</h4>
-                <h3>{item.exactDate || item.dates}</h3>
+                <h3>{item.role}</h3>
+                <p>{item.exactDate || item.dates}</p>
               </>
             ) : (
               <>
-                <h4>{item.school}</h4>
-                <h3>{item.course}</h3>
+                <h3>{item.school}</h3>
+                <p>{item.course}</p>
               </>
             )}
           </div>
-          <button className={styles.closeBtn} onClick={onClose}>
+          <button className={styles.closeBtn} onClick={onClose} aria-label="Close job modal">
             <IoCloseCircleSharp size={35} />
           </button>
         </div>
         
         {/* Responsibilities */}
-        {isExperience && item.responsibilities && (
+        {isExperience && item.responsibilities.length > 0 && (
           <div className={styles.modalTask}>
-              <ul>
-                {item.responsibilities.map((task, i) => (
-                  <li className={styles.taskList} key={i}>{task}</li>
-                ))}
-              </ul>
+            <ul>
+              {item.responsibilities.map((task, i) => (
+                <li key={i}>{task}</li>
+              ))}
+            </ul>
           </div>
         )}
-        
-        {/* Achievements*/}
-        {"achievements" in item && item.achievements && (
+
+        {/* Achievements */}
+        {item.achievements?.length > 0 && (
           <div className={styles.modalTask}>
-              <ul>
-                 {item.achievements.map((ach, i) => (
-                  <li className={styles.taskList} key={i}>{ach}</li>
-                ))}
-              </ul>
+            <ul>
+              {item.achievements!.map((ach, i) => (
+                <li key={i}>{ach}</li>
+              ))}
+            </ul>
           </div>
         )}
       </div>

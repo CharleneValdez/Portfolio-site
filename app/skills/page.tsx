@@ -1,9 +1,12 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Head from "next/head";
 import styles from "../../style/Skills.module.css";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap, FaFigma, FaGithub, FaCode } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap, FaFigma, FaGithub, FaCode, FaSearch } from "react-icons/fa";
+// import { , FaGlobe, FaChartLine } from "react-icons/fa";
 import { SiNextdotjs, SiPostman } from "react-icons/si";
+
 
 import { SkillsData } from "../types/data";
 
@@ -18,7 +21,8 @@ const iconMap: Record<string, React.ReactNode> = {
   SiPostman: <SiPostman color="#FF6C37" />,
   SiServicenow: <span role="img" aria-label="ServiceNow">🛠️</span>,
   FaCode: <FaCode color="#007ACC" />,
-  FaFigma: <FaFigma color="#F24E1E" />
+  FaFigma: <FaFigma color="#F24E1E" />,
+  FaSearch: <FaSearch color="#4CAF50" />,
 };
 
 const Skills = () => {
@@ -37,68 +41,76 @@ const Skills = () => {
   }, []);
 
   return (
-    <section id="skills" className={styles.skillsSection}>
-      
-      {/* Frontend */}
-      <div className={styles.column}>
-        <h2 className={styles.sectionTitle}>Frontend</h2>
-        <div className={styles.skillsGrid}>
-          {skills.frontend.map((skill, index) => (
-            <div key={index} className={styles.skillCard}>
-              <div className={styles.skillIcon} aria-hidden="true">
-                {skill.iconKey && iconMap[skill.iconKey]}
-              </div>
-              <p className={styles.skillName}>{skill.name}</p>
-              <span className={styles.skillLevel}>{skill.level}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+    <>
+      <Head>
+        <title>Charlene Mae Espanol | Front-End Developer Skills</title>
+        <meta name="description" content="Explore Charlene Mae Espanol’s front-end developer skills in React, Next.js, UI/UX design, and responsive web development." />
+        <meta name="keywords" content="Charlene Mae Espanol, Front-End Developer, React, Next.js, Figma, GitHub, Bootstrap, UI/UX Designer, Skills" />
+      </Head>
 
-      {/* Tools */}
-      <div className={styles.column}>
-        <h2 className={styles.sectionTitle}>Tools</h2>
-        <div className={styles.skillsGrid}>
-          {skills.tools.map((skill, index) => (
-            <div key={index} className={styles.skillCard}>
-              <div className={styles.skillIcon} aria-hidden="true">
-                {skill.iconKey && iconMap[skill.iconKey]}
+      <section id="skills" className={styles.skillsSection}>
+        
+        {/* Frontend */}
+        <div className={styles.column}>
+          <h2 className={styles.sectionTitle}>Frontend</h2>
+          <div className={styles.skillsGrid}>
+            {skills.frontend.map((skill, index) => (
+              <div key={index} className={styles.skillCard}>
+                <div className={styles.skillIcon} aria-hidden="true">
+                  {skill.iconKey && iconMap[skill.iconKey]}
+                </div>
+                <p className={styles.skillName}>{skill.name}</p>
+                <span className={styles.skillLevel}>{skill.level}</span>
               </div>
-              <p className={styles.skillName}>{skill.name}</p>
-              <span className={styles.skillLevel}>{skill.level}</span>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Design */}
-      <div className={styles.column}>
-        <h2 className={styles.sectionTitle}>Design</h2>
-        <div className={styles.skillsGrid}>
-          {skills.design.map((skill, index) => (
-            <div key={index} className={styles.skillCard}>
-              <div className={styles.skillIcon} aria-hidden="true">
-                {skill.iconKey && iconMap[skill.iconKey]}
+        {/* Tools */}
+        <div className={styles.column}>
+          <h2 className={styles.sectionTitle}>Tools</h2>
+          <div className={styles.skillsGrid}>
+            {skills.tools.map((skill, index) => (
+              <div key={index} className={styles.skillCard}>
+                <div className={styles.skillIcon} aria-hidden="true">
+                  {skill.iconKey && iconMap[skill.iconKey]}
+                </div>
+                <p className={styles.skillName}>{skill.name}</p>
+                <span className={styles.skillLevel}>{skill.level}</span>
               </div>
-              <p className={styles.skillName}>{skill.name}</p>
-              <span className={styles.skillLevel}>{skill.level}</span>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Soft Skills */}
-      <div className={styles.column}>
-        <h2 className={styles.sectionTitle}>Soft Skills</h2>
-        <div className={styles.skillsGrid}>
-          {skills.softSkills.map((soft, index) => (
-            <div key={index} className={styles.skillCard}>
-              <p className={styles.skillName}>{soft}</p>
-            </div>
-          ))}
+        {/* Design */}
+        <div className={styles.column}>
+          <h2 className={styles.sectionTitle}>Design</h2>
+          <div className={styles.skillsGrid}>
+            {skills.design.map((skill, index) => (
+              <div key={index} className={styles.skillCard}>
+                <div className={styles.skillIcon} aria-hidden="true">
+                  {skill.iconKey && iconMap[skill.iconKey]}
+                </div>
+                <p className={styles.skillName}>{skill.name}</p>
+                <span className={styles.skillLevel}>{skill.level}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+
+        {/* Soft Skills */}
+        <div className={styles.column}>
+          <h2 className={styles.sectionTitle}>Soft Skills</h2>
+          <div className={styles.skillsGrid}>
+            {skills.softSkills.map((soft, index) => (
+              <div key={index} className={styles.skillCard}>
+                <p className={styles.skillName}>{soft}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 

@@ -81,16 +81,17 @@ export async function GET() {
         { name: "JavaScript", level: "Proficient", iconKey: "FaJs" },
         { name: "React", level: "Advanced", iconKey: "FaReact" },
         { name: "Next.js", level: "Proficient", iconKey: "SiNextdotjs" },
-        { name: "Bootstrap", level: "Proficient", iconKey: "FaBootstrap" }
+        { name: "Bootstrap", level: "Proficient", iconKey: "FaBootstrap" },
       ],
       tools: [
         { name: "GitHub", level: "Proficient", iconKey: "FaGithub" },
         { name: "Postman", level: "Proficient", iconKey: "SiPostman" },
         { name: "ServiceNow", level: "Proficient", iconKey: "SiServicenow" },
-        { name: "VS Code", level: "Proficient", iconKey: "FaCode" }
+        { name: "VS Code", level: "Proficient", iconKey: "FaCode" },
+        { name: "SEO", level: "Proficient", iconKey: "FaSearch" }
       ],
       design: [
-        { name: "Figma", level: "Proficient", iconKey: "FaFigma" }
+        { name: "Figma", level: "Familiar", iconKey: "FaFigma" }
       ],
       softSkills: [
         "Responsive Design",
