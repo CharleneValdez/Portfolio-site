@@ -2,6 +2,7 @@
 
 import React from "react";
 import styles from "../../style/ContactModal.module.css";
+import useClipboard from "@/hooks/useClipboard";
 import { FaWhatsapp, FaViber } from "react-icons/fa";
 
 interface ContactModalProps {
@@ -10,52 +11,40 @@ interface ContactModalProps {
 }
 
 const ContactModal: React.FC<ContactModalProps> = ({ show, onClose }) => {
-  const [copied, setCopied] = React.useState<string | null>(null);
+  const { copied, copyToClipboard } = useClipboard();
 
   if (!show) return null;
 
-  const copyToClipboard = (text: string, label: string) => {
-    navigator.clipboard.writeText(text);
-    setCopied(label); 
-    setTimeout(() => setCopied(null), 2000);
-  };
-
   return (
-    <div className={styles.modalOverlay}>
+    <div className={styles.modalOverlay} role="dialog" aria-modal="true">
       <div className={styles.modalContent}>
-        <h3>Contact Me</h3>
+        <h2>Contact Me</h2>
 
         <div className={styles.contact}>
-          {/* WhatsApp */}
-          <div className={styles.contactIcons}>
-            <FaWhatsapp color="#25D366" size={32} />
-            <span
-              className={styles.copyText}
-              onClick={() => copyToClipboard("+63 917 876 0219", "whatsapp")}
-            >
-              +63 917 876 0219 (Viber)
-              {copied === "whatsapp" && (
-                <span className={styles.copiedMsg}> Copied!</span>
+          <address>
+            {/* WhatsApp */}
+            <div className={styles.contactIcons}>
+              <FaWhatsapp color="#25D366" size={32} />
+               <FaViber color="#665CAC" size={32} />
+              <a
+                href="tel:+639178760219"
+                className={styles.copyText}
+                onClick={(e) => {
+                  e.preventDefault(); 
+                  copyToClipboard("+63 917 876 0219", "contact");
+                  window.location.href = "tel:+639178760219"; 
+                }}
+              >
+                +63 917 876 0219
+              </a>
+              {copied === "contact" && (
+                <span className={styles.copiedMsg} aria-live="polite">Copied!</span>
               )}
-            </span>
-          </div>
-
-          {/* Viber */}
-          <div className={styles.contactIcons}>
-            <FaViber color="#665CAC" size={32} />
-            <span
-              className={styles.copyText}
-              onClick={() => copyToClipboard("+63 917 876 0219", "viber")}
-            >
-              +63 917 876 0219 (Viber)
-              {copied === "viber" && (
-                <span className={styles.copiedMsg}> Copied!</span>
-              )}
-            </span>
-          </div>
+            </div>
+          </address>
         </div>
 
-        <button onClick={onClose} className={styles.closeButton}>
+        <button onClick={onClose} className={styles.closeButton} aria-label="Close contact modal">
           Close
         </button>
       </div>

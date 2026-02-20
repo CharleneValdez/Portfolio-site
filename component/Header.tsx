@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";   
+import Image from "next/image";
 import Link from "next/link";
 import styles from '../style/Header.module.css';
 
@@ -18,14 +19,32 @@ function Header() {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <header className={styles.appHeader}>
+    <header className={styles.appHeader} aria-label="Site header">
       <div className={styles.headerContainer}>
         <div className={styles.logo}>
-          <div className={styles.logoImg}></div>
+          {/* <div className={styles.logoImg}></div> */}
+          <div className={styles.logoImg}>
+            <Image 
+              src="/asset/image/logo.png" 
+              alt="Charlene Mae Espanol Portfolio Logo" 
+              width={130} 
+              height={48} 
+              priority
+              className={styles.logoDesktop}
+            />
+            <Image 
+              src="/asset/image/icon.png" 
+              alt="Charlene Mae Espanol Portfolio Small Logo" 
+              width={40} 
+              height={40} 
+              priority
+              className={styles.logoMobile}
+            />
+          </div>
         </div>
 
         {/* Navigation */}
-        <nav className={styles.navLinks}>
+        <nav className={styles.navLinks} aria-label="Main navigation">
           <ul>
               <li>
                   <Link 
@@ -87,7 +106,7 @@ function Header() {
       </div>
 
       {/* Contact Modal */}
-      <ContactModal show={showModal} onClose={() => setShowModal(false)} />
+      <ContactModal show={showModal} onClose={() => setShowModal(false)}/>
     </header>
   );
 }
