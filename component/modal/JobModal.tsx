@@ -43,7 +43,7 @@ export default function JobModal({ isOpen, onClose, item }: JobModalProps) {
             )}
           </div>
           <button className={styles.closeBtn} onClick={onClose} aria-label="Close job modal">
-            <IoCloseCircleSharp size={35} />
+            <IoCloseCircleSharp className={styles.closeBtnIcon}/>
           </button>
         </div>
         
