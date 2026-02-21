@@ -36,7 +36,7 @@
 
     display: flex;
     gap: 20px;
-    justify-content:center;
+    justify-content: start;
     align-items: center;
 }
 
@@ -45,10 +45,11 @@
 
     border-radius: 60px;
     border: 2px solid gray;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2); 
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
 }
 
 .compDetails{
+    width: 73%;
     display: flex;
     flex-direction: column;
 
@@ -56,6 +57,7 @@
 }
 
 .compDetails h3{ 
+    width: 100%;
     font-family: var(--font-raleway);
     margin: 0;
     color: black;
@@ -64,7 +66,9 @@
 
     white-space: nowrap;
 }
+
 .compDetails p{ 
+    width: 100%;
     font-family: var(--font-raleway);
     margin: 0;
     font-weight:normal;
@@ -72,6 +76,7 @@
 
     white-space: nowrap;
 }
+
 .closeBtn {
     position: absolute;
     font-size: 50px;
@@ -82,7 +87,12 @@
     background: none;
     border: none;
     cursor: pointer;
-    
+
+    padding: 0;
+}
+
+.closeBtnIcon {
+    font-size: 35px;
 }
 
 .modalTask{
@@ -90,7 +100,7 @@
 
     display: flex;
     flex-direction: column;
-    margin: 20px 0 10px 0;
+    margin: 20px 0 10px 10px;
 }
 
 .modalTask ul {
@@ -103,22 +113,145 @@
     margin-bottom: 0.5rem;
     line-height: 1.4;
     text-align: start;
-    font-size: 20px;
+    font-size: 20px; 
 }
 
-@media (max-width: 600px) {
-  .modalContent {
-    width: 90%;
-    padding: 1rem;
-  }
+@media (max-width: 680px) {
+    .modalContent {
+        width: 90%;
+    }
+    .modalDetails {
+        gap: 10px
+    }
+}
 
-  .modalDetails {
-    flex-direction: column;
-    align-items: center;
-  }
+@media (max-width: 670px) {
+    .modalDetails {
+        flex-direction: column;
+        align-items: center;
+    }
+    .closeBtn {
+        top: 25px;
+        right: 25px;
+    }
+    .modalTask {
+        margin-left: 0;
+    }
+    .compDetails {
+        width: 100%;
+    }
+    .closeBtn {
+        top: 13px;
+        right: 25px;
+    }
+}
 
-  .modalDetails img {
-    max-width: 80px;
-    margin-bottom: 1rem;
-  }
+@media (max-width: 620px) {
+    .modalTask li {
+        font-size: 18px; 
+    }
+}
+
+@media (max-width: 560px) {
+    .closeBtnIcon {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .compDetails h3{
+        white-space: normal;
+    }
+}
+
+@media (max-width: 480px) {
+    .compDetails h3{
+        white-space: normal;
+    }
+    .modalDetails {
+        margin-top: 10px;
+    }
+    .closeBtn {
+        top: 17px;
+        right: 20px;
+    }
+}
+
+
+@media (max-width: 478px) {
+    .compDetails h3{
+        font-size: 20px
+    }
+    .modalDetails img {
+        width: 70px;
+        height: 70px;
+    }
+
+}
+
+@media (max-width: 406px) {
+    .compDetails h3{
+        font-size: 18px
+    }
+    .modalTask li {
+        font-size: 12px; 
+    }
+}
+
+@media (max-width: 400px) {
+    .closeBtnIcon {
+        font-size: 25px;
+    }
+     .closeBtn {
+        top: 13px;
+        right: 23px;
+    }
+}
+
+@media (max-width: 372px) {
+    .compDetails h3{
+        font-size: 16px
+    }
+    .modalDetails img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
+@media (max-width: 338px) {
+    .compDetails h3{
+        font-size: 14px
+    }
+    .compDetails p{
+        font-size: 12px
+    }
+    .closeBtnIcon {
+        font-size: 23px;
+    }
+    .closeBtn {
+        top: 10px;
+    }
+}
+
+@media (max-width: 302px) {
+    .compDetails h3{
+        font-size: 12px
+    }
+    .compDetails p{
+        font-size: 10px
+    }
+    .modalDetails img {
+        width: 50px;
+        height: 50px;
+    }
+    .modalTask li {
+        font-size: 10px; 
+    }
+    .closeBtnIcon {
+        font-size: 20px;
+    }
+    .closeBtn {
+        top: 7px;
+    }
 }

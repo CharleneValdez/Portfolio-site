@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "../style/Home.module.css"
+import Image from "next/image";
 import Head from "next/head";
 
 import { HiDownload } from "react-icons/hi";
@@ -13,7 +14,7 @@ export default function Home() {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/asset/doc/Charlene Espanol - CV.pdf";
+    link.href = "/asset/doc/Charlene Español -CV.pdf";
     link.download = "Charlene Espanol - CV.pdf"
     link.click();
   }
@@ -30,9 +31,9 @@ export default function Home() {
         <div className={styles.introduction}>
           <div className={styles.introText}>
         
-            <h1 className={styles.heroText}>Hello, I'm Charlene</h1>
+            <h1 className={styles.heroText}>Hello, I'm Charlene.</h1>
             <h2 className={styles.heroText}>UI/UX Designer</h2>
-            <h2 className={styles.heroText}>Based in Philippines</h2>
+            <h2 className={styles.heroText}>Based in Philippines.</h2>
 
 
             <p>
@@ -55,6 +56,14 @@ export default function Home() {
 
           <div className={styles.introImg}>
             <div className={styles.img}></div>
+            {/* <Image 
+              src="/asset/image/Home pic.png" 
+              alt="Charlene Mae Espanol Home Picture" 
+              width={281} 
+              height={374} 
+              priority
+              className={styles.img}
+            /> */}
           </div>
         </div>
 
@@ -86,7 +95,7 @@ export default function Home() {
           </button> */}
 
           <a 
-            href="mailto:charleve.valdez19@gmail.com"
+            href="mailto:charlene.valdez19@gmail.com"
             className={styles.socialButton}
           >
               <GoPaperAirplane className={styles.buttonIcon}/>
