@@ -5,8 +5,8 @@ export async function GET() {
         id: 1,
         school: "Bulacan State University",
         course: "Bachelor of Science in Information Technology",
-        dates: "2019 - 2023",
-        logo: "/asset/image/bulsu.png",
+        dates: "2019 - 2023", 
+        logo: "/asset/image/BulSU.png",
         achievements: [
           "Graduated Cum Laude, demonstrating consistent academic excellence",
           "Achieved Dean’s Lister status from 2020 to 2023 for outstanding performance each semester"
