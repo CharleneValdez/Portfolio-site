@@ -14,7 +14,7 @@ export default function Home() {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/asset/doc/Charlene Español -CV.pdf";
+    link.href = "/asset/doc/Charlene Español - New CV.pdf";
     link.download = "Charlene Espanol - CV.pdf"
     link.click();
   }
